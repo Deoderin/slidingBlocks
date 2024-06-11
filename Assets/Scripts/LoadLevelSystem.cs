@@ -6,7 +6,7 @@ public class LoadLevelSystem : MonoBehaviour
     public static LoadLevelSystem instance;
     private void Awake()
     {
-        instance ??= this;
+        instance = this;
     }
 
     public void LoadLevel(LevelScene level)
@@ -16,7 +16,7 @@ public class LoadLevelSystem : MonoBehaviour
             case LevelScene.Game:
                 SceneManager.LoadScene(level.ToString());
                 break;
-            case LevelScene.Menu:
+            case LevelScene.Preloader:
                 break;
         }
     }
@@ -25,5 +25,5 @@ public class LoadLevelSystem : MonoBehaviour
 public enum LevelScene
 {
     Game,
-    Menu
+    Preloader
 }

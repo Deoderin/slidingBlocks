@@ -4,19 +4,20 @@ using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour, IDragHandler, IEndDragHandler
 {
-    public event Action PressInput;
-    public event Action UnPressInput;    
-    public event Action<RotationDirection> SwipeInput;
+    public static InputManager instance;
 
+    public event Action PressInput;
+    public event Action UnPressInput;
+
+    public event Action<RotationDirection> SwipeInput;
     private float _timeTouchEnded;
     private float _displayTime = 0.45f;
     private Touch _touch;
     private TouchPhase _touchPhase;
-    public static InputManager instance;
-    
+
     private void Awake()
     {
-        instance ??= this;
+        instance = this;
     }
 
     private void Update()

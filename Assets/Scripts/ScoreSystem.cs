@@ -35,5 +35,5 @@ public class ScoreSystem : MonoBehaviour
     public static void AddMultiplier() => _instance.Multiplier += 1;
     public static void ClearMultiplier() => _instance.Multiplier = 1;
     
-    private void Awake() => _instance ??= this;
+    private void Awake() => _instance = this;
 }

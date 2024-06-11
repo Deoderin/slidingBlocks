@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         StartGame();
         Subscribe();
+        
     }
 
     private void OpenBriefingUi()

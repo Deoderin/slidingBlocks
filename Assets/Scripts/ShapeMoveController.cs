@@ -18,7 +18,7 @@ public class ShapeMoveController : MonoBehaviour
     private ShapeFinisher _shapeFinisher;
     
     private Vector3 _rotationPosition;
-    private GameplayManager _gameplayManager;
+    public GameSteps _step;
     private InputManager _inputManager;
     private TweenerCore<float, float, FloatOptions> _adjustSpeed;
     private float _speed;
@@ -34,11 +34,7 @@ public class ShapeMoveController : MonoBehaviour
         _rotationPosition = _rootShape.rotation.eulerAngles;
     }
 
-    private void Construct()
-    {
-        _gameplayManager = GameplayManager.instance;
-        _inputManager = InputManager.instance;
-    }
+    private void Construct() => _inputManager = InputManager.instance;
 
     private void Subscribing()
     {
@@ -54,7 +50,7 @@ public class ShapeMoveController : MonoBehaviour
         if(other.CompareTag("Finish") && _isFinish is false)
         {
             _isFinish = true;
-            _gameplayManager.Step = GameSteps.Finish;
+            _step = GameSteps.Finish;
             StopSpeed(0);
             StartCoroutine(_shapeFinisher.Finish());
             FinishLevel?.Invoke();
@@ -62,7 +58,7 @@ public class ShapeMoveController : MonoBehaviour
         
         if(other.CompareTag("Start"))
         {
-            _gameplayManager.Step = GameSteps.Gameplay;
+            _step = GameSteps.Gameplay;
         }
 
         if(other.CompareTag("Wall"))
@@ -83,7 +79,7 @@ public class ShapeMoveController : MonoBehaviour
     {
         float timeUntilUpdate = 0.2f;
         
-        while(_gameplayManager.Step is GameSteps.Gameplay or GameSteps.Start)
+        while(_step is GameSteps.Gameplay or GameSteps.Start)
         {
             yield return new WaitForSeconds(timeUntilUpdate);
             
@@ -96,7 +92,7 @@ public class ShapeMoveController : MonoBehaviour
     
     private void AdjustSpeed(float targetSpeed)
     {
-        if (_gameplayManager.Step is GameSteps.Gameplay or GameSteps.Start)
+        if (_step is GameSteps.Gameplay or GameSteps.Start)
         {
             _adjustSpeed = DOTween.To(() => _speed, x => _speed = x, targetSpeed, _shapeConfig.AccelerationTime)
                                   .SetEase(_shapeConfig.AccelerationAnimationType);

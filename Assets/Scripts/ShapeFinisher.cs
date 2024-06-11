@@ -13,20 +13,24 @@ public class ShapeFinisher : MonoBehaviour
     
     public IEnumerator Finish()
     {
+        int scoreWithBlock = 100;
+        float delay = 0.15f;
+        float duration = 0.3f;
+        
         yield return new WaitForSeconds(1f);
         
         foreach (var block in _blocks)
         {
-            yield return new WaitForSeconds(0.4f);
-            block.transform.DOScale(Vector3.zero, 0.5f);
-            ShowScore();
-            ScoreSystem.AddScore(100);
+            yield return new WaitForSeconds(delay);
+            block.transform.DOScale(Vector3.zero, duration);
+            ShowScore(scoreWithBlock);
+            ScoreSystem.AddScore(scoreWithBlock);
         }
     }
 
-    private void ShowScore()
+    private void ShowScore(int score)
     {
-        var score = Instantiate(_score, transform.position, quaternion.identity);
-        score.transform.DOMoveY(100, 10);
+        var scoreObject = Instantiate(_score, transform.position, quaternion.identity);
+        scoreObject.transform.DOMoveY(score, 10);
     }
 }
