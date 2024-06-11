@@ -18,7 +18,7 @@ public class ShapeMoveController : MonoBehaviour
     private ShapeFinisher _shapeFinisher;
     
     private Vector3 _rotationPosition;
-    public GameSteps _step;
+    private GameSteps _step;
     private InputManager _inputManager;
     private TweenerCore<float, float, FloatOptions> _adjustSpeed;
     private float _speed;
@@ -86,7 +86,7 @@ public class ShapeMoveController : MonoBehaviour
             if(_speed > _shapeConfig.BaseSpeedShape)
             {
                 ScoreSystem.AddScore(_speedScore);
-            }
+            } 
         }
     }
     

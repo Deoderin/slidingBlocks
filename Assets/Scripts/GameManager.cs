@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
     private CinemachineVirtualCamera _camera;
     [SerializeField]
     private BriefingGUI _briefingGUI;
-    //[SerializeField]
-    
+
     private ShapeMoveController _shape;
 
     private void Awake()

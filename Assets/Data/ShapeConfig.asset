@@ -19,5 +19,5 @@ MonoBehaviour:
   <FinishStopTime>k__BackingField: 3
   <TurningTime>k__BackingField: 0.2
   <AngleRotation>k__BackingField: 90
-  <RotationAnimationType>k__BackingField: 1
+  <RotationAnimationType>k__BackingField: 7
   <AccelerationAnimationType>k__BackingField: 1

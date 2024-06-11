@@ -11,8 +11,6 @@ public class TutorialGUI : MonoBehaviour
     {
         _tutorialPanel.SetActive(false);
         
-        Debug.Log(LevelControllerSystem.GetLevel());
-        
         if(LevelControllerSystem.GetLevel() == 0)
         {
             _tutorialPanel.SetActive(true);

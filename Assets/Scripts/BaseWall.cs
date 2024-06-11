@@ -9,8 +9,6 @@ public class BaseWall : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.LogError(other.tag);
-        
         if(other.CompareTag("Shape"))
         {
             ScoreSystem.AddScore(_wallScore);

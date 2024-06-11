@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blocks: []
   _score: {fileID: 4796025590719979477, guid: f6e93e5f7b0d1324ca291f0611f7097f, type: 3}
+  _shadow: {fileID: 409051145071335657}
 --- !u!1 &6614103102640916438
 GameObject:
   m_ObjectHideFlags: 0

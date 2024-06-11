@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,9 @@ public class LoadLevelSystem : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        LoadLevel(LevelScene.Game);
+        
+        DontDestroyOnLoad(gameObject);
     }
 
     public void LoadLevel(LevelScene level)
@@ -14,7 +18,7 @@ public class LoadLevelSystem : MonoBehaviour
         switch(level)
         {
             case LevelScene.Game:
-                SceneManager.LoadScene(level.ToString());
+                    SceneManager.LoadScene(level.ToString());
                 break;
             case LevelScene.Preloader:
                 break;

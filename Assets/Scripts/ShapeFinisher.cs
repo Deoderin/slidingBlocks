@@ -10,7 +10,9 @@ public class ShapeFinisher : MonoBehaviour
     private List<GameObject> _blocks;
     [SerializeField]
     private GameObject _score;
-    
+    [SerializeField]
+    private GameObject _shadow;
+
     public IEnumerator Finish()
     {
         int scoreWithBlock = 100;
@@ -26,6 +28,8 @@ public class ShapeFinisher : MonoBehaviour
             ShowScore(scoreWithBlock);
             ScoreSystem.AddScore(scoreWithBlock);
         }
+        
+        _shadow.SetActive(false);
     }
 
     private void ShowScore(int score)

@@ -14,7 +14,8 @@ public class InputManager : MonoBehaviour, IDragHandler, IEndDragHandler
     private float _displayTime = 0.45f;
     private Touch _touch;
     private TouchPhase _touchPhase;
-
+    private int _swipeSize = 7;
+    
     private void Awake()
     {
         instance = this;
@@ -57,7 +58,7 @@ public class InputManager : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        int minimumSwipePosition = Screen.width / 4;
+        int minimumSwipePosition = Screen.width / _swipeSize;
         if(Vector2.Distance(eventData.pressPosition, eventData.position) < minimumSwipePosition)
         {
             return;

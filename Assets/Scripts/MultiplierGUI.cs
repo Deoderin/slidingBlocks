@@ -35,9 +35,6 @@ public class MultiplierGUI : MonoBehaviour
             case 2:
                 _panel.DOMoveX(_showposition.position.x, 0.5f);
                 break;
-            case > 2:
-                Debug.LogError("FIRE");
-                break;
         }
 
         _multiplierInfo.text = "X " + currentMultiplier;

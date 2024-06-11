@@ -7,10 +7,10 @@ public class WallPusher : MonoBehaviour
     private ShapePunchConfig _shapePunchConfig; 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Wall"))
+        if(other.CompareTag("Wall") || other.CompareTag("Glass"))
         {
             PunchWallBlock(other);
-        }
+        }        
     }
 
     private void PunchWallBlock(Collider wallCollider)
