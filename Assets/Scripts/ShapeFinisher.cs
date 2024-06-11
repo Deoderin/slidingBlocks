@@ -24,9 +24,13 @@ public class ShapeFinisher : MonoBehaviour
         foreach (var block in _blocks)
         {
             yield return new WaitForSeconds(delay);
-            block.transform.DOScale(Vector3.zero, duration);
-            ShowScore(scoreWithBlock);
-            ScoreSystem.AddScore(scoreWithBlock);
+
+            if(block != null)
+            {
+                block.transform.DOScale(Vector3.zero, duration);
+                ShowScore(scoreWithBlock);
+                ScoreSystem.AddScore(scoreWithBlock);
+            }
         }
         
         _shadow.SetActive(false);
