@@ -15,7 +15,7 @@ public class WallPusher : MonoBehaviour
 
     private void PunchWallBlock(Collider wallCollider)
     {
-        wallCollider.attachedRigidbody.isKinematic = false;
+        wallCollider.attachedRigidbody.isKinematic = wallCollider.CompareTag("Glass");
         wallCollider.attachedRigidbody.AddForce(Vector3.forward * _shapePunchConfig.PunchForce);
         wallCollider.transform.DOScale(Vector3.zero, _shapePunchConfig.TimePunchAnimation)
              .SetEase(_shapePunchConfig.EaseForDestroyPunchingWall)
