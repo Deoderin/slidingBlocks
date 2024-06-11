@@ -19,8 +19,5 @@ public class BriefingGUI : MonoBehaviour
         _panel.DOMoveX(_showPoint.position.x, 1);
     }
     
-    private void Awake()
-    {
-        _nexLevelButton.onClick.AddListener(_gameManager.NextLevelLoad);
-    }
+    private void Awake() => _nexLevelButton.onClick.AddListener(_gameManager.NextLevelLoad);
 }

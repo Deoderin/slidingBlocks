@@ -38,7 +38,9 @@ public class ShapeFinisher : MonoBehaviour
 
     private void ShowScore(int score)
     {
+        var animationDuration = 10;
+        
         var scoreObject = Instantiate(_score, transform.position, quaternion.identity);
-        scoreObject.transform.DOMoveY(score, 10);
+        scoreObject.transform.DOMoveY(score, animationDuration);
     }
 }

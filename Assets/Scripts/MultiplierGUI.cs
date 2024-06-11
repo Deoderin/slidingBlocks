@@ -26,14 +26,14 @@ public class MultiplierGUI : MonoBehaviour
     private void UpdateMultiplier()
     {
         var currentMultiplier = _scoreSystem.Multiplier;
-        
+        var animationDuration = 0.5f;
         switch(currentMultiplier)
         {
             case 1:
-                _panel.DOMoveX(_hidePosition.position.x, 0.5f);
+                _panel.DOMoveX(_hidePosition.position.x, animationDuration);
                 break;
             case 2:
-                _panel.DOMoveX(_showposition.position.x, 0.5f);
+                _panel.DOMoveX(_showposition.position.x, animationDuration);
                 break;
         }
 

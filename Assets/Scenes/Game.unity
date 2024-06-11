@@ -4102,7 +4102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: swipe left or right
+  m_text: Swipe left or right
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f1b04a4c149b2b4db95479ef0bde403, type: 2}
   m_sharedMaterial: {fileID: 385519131240070854, guid: 3f1b04a4c149b2b4db95479ef0bde403, type: 2}
