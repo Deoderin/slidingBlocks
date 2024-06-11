@@ -63,8 +63,6 @@ public class ShapeMoveController : MonoBehaviour
 
         if(other.CompareTag("Wall"))
         {
-            _adjustSpeed.Complete();
-            _adjustSpeed.Kill();
             _speed = _shapeConfig.WallCollisionSpeedShape;
             ScoreSystem.ClearMultiplier();
             AdjustSpeed(_shapeConfig.BaseSpeedShape);
@@ -94,6 +92,7 @@ public class ShapeMoveController : MonoBehaviour
     {
         if (_step is GameSteps.Gameplay or GameSteps.Start)
         {
+            _adjustSpeed.Kill();            
             _adjustSpeed = DOTween.To(() => _speed, x => _speed = x, targetSpeed, _shapeConfig.AccelerationTime)
                                   .SetEase(_shapeConfig.AccelerationAnimationType);
         }
