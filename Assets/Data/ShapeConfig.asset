@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c332e3dcfa430eada7f873f94b4fb0, type: 3}
+  m_Name: ShapeConfig
+  m_EditorClassIdentifier: 
+  <BaseSpeedShape>k__BackingField: 15
+  <WallCollisionSpeedShape>k__BackingField: -20
+  <UpSpeedShape>k__BackingField: 30
+  <AccelerationTime>k__BackingField: 0.5
+  <FinishStopTime>k__BackingField: 3
+  <TurningTime>k__BackingField: 0.2
+  <AngleRotation>k__BackingField: 90
+  <RotationAnimationType>k__BackingField: 1
+  <AccelerationAnimationType>k__BackingField: 1
